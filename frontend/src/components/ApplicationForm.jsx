@@ -1,0 +1,179 @@
+import React, { useState } from 'react'
+
+export default function ApplicationForm({ clubName, abbr, onClose }) {
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    branch: '',
+    registrationNumber: '',
+    phoneNumber: '',
+    priority: '',
+    motivation: '',
+    domain: '',
+    projectLink: ''
+  })
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    alert(`Application submitted for ${clubName}!`)
+    onClose()
+  }
+
+  return (
+    <div className="application-page">
+      <div className="application-container">
+        <button className="back-btn" onClick={onClose} aria-label="Go back">
+          ← Back to Clubs
+        </button>
+
+        <h2 className="form-title">FILL YOUR DATA</h2>
+
+        <form className="application-form" onSubmit={handleSubmit}>
+          <div className="form-row">
+            <div className="form-group">
+              <label>Full Name <span className="required">*</span></label>
+              <input
+                type="text"
+                name="fullName"
+                placeholder="Enter your full name"
+                value={formData.fullName}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>College Email <span className="required">*</span></label>
+              <input
+                type="email"
+                name="email"
+                placeholder="Enter your college email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label>Branch <span className="required">*</span></label>
+              <select
+                name="branch"
+                value={formData.branch}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Your Branch</option>
+                <option value="CSE">Computer Science Engineering</option>
+                <option value="IT">Information Technology</option>
+                <option value="ECE">Electronics and Communication</option>
+                <option value="EEE">Electrical and Electronics</option>
+                <option value="MECH">Mechanical Engineering</option>
+                <option value="CIVIL">Civil Engineering</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label>Registration Number <span className="required">*</span></label>
+              <input
+                type="text"
+                name="registrationNumber"
+                placeholder="Enter registration number"
+                value={formData.registrationNumber}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label>Phone Number <span className="required">*</span></label>
+              <input
+                type="tel"
+                name="phoneNumber"
+                placeholder="Enter 10-digit phone number"
+                pattern="[0-9]{10}"
+                value={formData.phoneNumber}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="form-group">
+              <label>Priority (1-5) <span className="required">*</span></label>
+              <input
+                type="number"
+                name="priority"
+                placeholder="Rate GDSC priority (1-5)"
+                min="1"
+                max="5"
+                value={formData.priority}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="form-group full-width">
+            <label>Why do you want to join {abbr}? <span className="required">*</span></label>
+            <textarea
+              name="motivation"
+              placeholder={`Tell us your motivation to join ${clubName}...`}
+              value={formData.motivation}
+              onChange={handleChange}
+              maxLength="500"
+              rows="5"
+              required
+            ></textarea>
+            <div className="char-count">{formData.motivation.length}/500</div>
+          </div>
+
+          <div className="form-row">
+            <div className="form-group">
+              <label>Your Domain <span className="required">*</span></label>
+              <select
+                name="domain"
+                value={formData.domain}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Select Your Domain</option>
+                <option value="frontend">Frontend Development</option>
+                <option value="backend">Backend Development</option>
+                <option value="fullstack">Full Stack Development</option>
+                <option value="mobile">Mobile Development</option>
+                <option value="ml">Machine Learning / AI</option>
+                <option value="cloud">Cloud / DevOps</option>
+                <option value="design">UI/UX Design</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div className="form-group">
+              <label>Best Project (GitHub Link) Not Compulsory</label>
+              <input
+                type="url"
+                name="projectLink"
+                placeholder="https://github.com/username/project"
+                value={formData.projectLink}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+
+          <button type="submit" className="submit-btn">Submit Form</button>
+
+          <p className="form-footer">
+            By submitting this form, you agree to join our amazing community of developers!
+          </p>
+        </form>
+      </div>
+    </div>
+  )
+}
