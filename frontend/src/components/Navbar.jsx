@@ -12,7 +12,7 @@ export default function Navbar(){
         <ul className="top-nav">
           <li><a href="#">Home</a></li>
           <li><a href="#about">About Us</a></li>
-          <li><a href="#events">Events</a></li>
+          <li><a href="#clubs">Clubs</a></li>
           <li><a href="#team">Team</a></li>
           <li><a href="#calendar">Calender</a></li>
           <li><a href="#contact">Contact Us</a></li>
