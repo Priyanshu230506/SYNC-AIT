@@ -52,7 +52,7 @@ This platform manages and showcases technical clubs such as:
 
 ---
 
-## 🧱 Tech Stack (UNCHANGED)
+## 🧱 Tech Stack 
 
 | Layer | Technology |
 |-----:|------------|
