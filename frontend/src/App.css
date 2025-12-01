@@ -20,13 +20,6 @@
   --title-h4: #00c29a;
 }
 
-
-html,
-body,
-#root {
-  height: 100%;
-  width: 100%;
-}
 body {
   margin: 0;
   padding: 0;
@@ -37,8 +30,6 @@ body {
   color: var(--text);
   -webkit-font-smoothing: antialiased;
 }
-
-
 
 .app {
   min-height: 100vh;

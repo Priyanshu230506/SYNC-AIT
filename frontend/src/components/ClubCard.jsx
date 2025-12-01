@@ -1,7 +1,4 @@
-import React from 'react'
-import cpLogo from '../assets/cp.jpg'
-import gdgLogo from '../assets/google-developers.svg'
-import ossLogo from '../assets/oss.svg'
+import clubLogos from "../assets/club_logos"
 
 export default function ClubCard({ abbr, name, desc, focusAreas = [], activities = [], who, keywords = [], events = [], onApply }) {
   const primaryActivity = (activities && activities.length > 0) ? activities[0] : null
@@ -10,11 +7,11 @@ export default function ClubCard({ abbr, name, desc, focusAreas = [], activities
     <article className="club" aria-labelledby={`${abbr}-title`}>
       <div className="top">
         {abbr === 'OSS' ? (
-          <img src={ossLogo} alt={`${name} logo`} className="club-logo" />
+          <img src={clubLogos.oss} alt={`${name} logo`} className="club-logo" />
         ) : abbr === 'CP' ? (
-          <img src={cpLogo} alt={`${name} logo`} className="club-logo" />
+          <img src={clubLogos.cp} alt={`${name} logo`} className="club-logo" />
         ) : abbr === 'GDG' ? (
-          <img src={gdgLogo} alt={`${name} logo`} className="club-logo" />
+          <img src={clubLogos.googleDevelopers} alt={`${name} logo`} className="club-logo" />
         ) : (
           <span className="badge">{abbr}</span>
         )}
