@@ -1,8 +1,8 @@
-import clubLogos from "../assets/club_logos"
+import React from 'react'
+import clubLogos from "../assets/clblogos"
+import '../sections/club.css'
 
 export default function ClubCard({ abbr, name, desc, focusAreas = [], activities = [], who, keywords = [], events = [], onApply }) {
-  const primaryActivity = (activities && activities.length > 0) ? activities[0] : null
-
   return (
     <article className="club" aria-labelledby={`${abbr}-title`}>
       <div className="top">
@@ -21,11 +21,11 @@ export default function ClubCard({ abbr, name, desc, focusAreas = [], activities
       <p className="lead">{desc}</p>
 
       {keywords && keywords.length > 0 && (
-        <div className="keywords" aria-label={`${abbr} keywords`}>
+        <ul className="keywords-list" aria-label={`${abbr} keywords`}>
           {keywords.map((k, idx) => (
-            <span key={k + idx} className="tag">{k}</span>
+            <li key={k + idx}>{k}</li>
           ))}
-        </div>
+        </ul>
       )}
 
       <div className="info-grid">
@@ -58,7 +58,6 @@ export default function ClubCard({ abbr, name, desc, focusAreas = [], activities
           </div>
         )}
       </div>
-
       {events && events.length > 0 && (
         <div className="events-section" aria-label={`${abbr} activities`}>
           <strong>Activities</strong>

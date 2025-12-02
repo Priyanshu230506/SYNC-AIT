@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import './form.css'
 
 export default function ApplicationForm({ clubName, abbr, onClose }) {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export default function ApplicationForm({ clubName, abbr, onClose }) {
     domain: '',
     projectLink: ''
   })
+  const [loading, setLoading] = useState(false)
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -19,8 +21,12 @@ export default function ApplicationForm({ clubName, abbr, onClose }) {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    alert(`Application submitted for ${clubName}!`)
-    onClose()
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      alert(`Application submitted for ${clubName}!`)
+      onClose()
+    }, 1800)
   }
 
   return (
@@ -32,6 +38,11 @@ export default function ApplicationForm({ clubName, abbr, onClose }) {
 
         <h2 className="form-title">FILL YOUR DATA</h2>
 
+        {loading ? (
+          <div style={{textAlign:'center',margin:'32px 0'}}>
+            <img src={require('./loader.gif')} alt="Loading..." style={{width:'64px',height:'64px'}} />
+          </div>
+        ) : (
         <form className="application-form" onSubmit={handleSubmit}>
           <div className="form-row">
             <div className="form-group">
@@ -173,6 +184,7 @@ export default function ApplicationForm({ clubName, abbr, onClose }) {
             By submitting this form, you agree to join our amazing community of developers!
           </p>
         </form>
+        )}
       </div>
     </div>
   )

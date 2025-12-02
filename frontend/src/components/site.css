@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=BBH+Sans+Bartle&family=BBH+Sans+Hegarty&family=Boldonse&family=Science+Gothic:wght@100..900&family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+.main{
+  padding-top: 20px;
+}
+.page-head{
+  text-align: center;
+  padding: 40px 0 10px;
+}
+.section-title{
+  margin: 0;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.title-dark{
+  color: #0f3b86;
+  font-size: 56px;
+  line-height: 0.9;
+}
+
+.home-hero .section-title{
+  font-family: 'Science Gothic', 'BBH Sans Hegarty', Inter, system-ui, -apple-system, sans-serif;
+  font-size: 100px;
+  letter-spacing: 1px;
+}
+
+.home-hero .lead{
+  font-family: Inter, system-ui, -apple-system, Arial, sans-serif;
+  font-size: 18px;
+  color: #5b6a7a;
+  margin-top: 12px;
+}
+
+.home-hero{
+  position: relative;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 48px 0 28px;
+  border-bottom: 10px solid #0f2a70;
+  background: transparent;
+}
+.title-violet{
+  color: #1e3a8a;
+  font-size: 20px;
+}
+.lead{
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+html{ scroll-behavior: smooth; }
+
+.loader-container{
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255,255,255,0.96);
+  z-index: 9999;
+}
+.loader-gif{
+  width: 72px;
+  height: 72px;
+}
+
+html{ scroll-behavior: smooth; }
+
+@keyframes fadeUp{
+  from{ opacity:0; transform: translateY(16px); }
+  to{ opacity:1; transform: translateY(0); }
+}
+
+.application-container{ animation: fadeUp .35s ease both; }
+
+.logo{ transition: transform .25s ease; }
+.logo:hover{ transform: scale(1.06); }
+
+@media (max-width: 1000px){
+  .cards{ grid-template-columns: repeat(2, 1fr); }
+  .title-dark{ font-size: 44px; }
+}
+@media (max-width: 720px){
+  .cards{ grid-template-columns: 1fr; }
+  .title-dark{ font-size: 36px; }
+}

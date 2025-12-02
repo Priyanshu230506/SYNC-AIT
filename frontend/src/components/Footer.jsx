@@ -1,5 +1,5 @@
 import bgImage from '../assets/bg-image.png'
-import clubLogos from '../assets/club_logos'
+import clubLogos from '../assets/clblogos'
 
 const Footer = () => {
   return (
