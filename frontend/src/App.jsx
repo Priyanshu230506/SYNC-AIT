@@ -7,7 +7,7 @@ import Footer from './components/Footer'
 export default function App() {
   const [loading, setLoading] = useState(true)
   useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 1200)
+    const t = setTimeout(() => setLoading(false), 4000)
     return () => clearTimeout(t)
   }, [])
 
