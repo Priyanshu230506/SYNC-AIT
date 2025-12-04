@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react'
-import Loader from '../components/Loader/Loader'
+import Loader from '../../components/Loader/Loader'
 import './Home.css'
-import Logocollections from "../assets/clblogos/clublogos.svg"
+import Logocollections from "../../assets/clublogos/clublogos.svg"
 
 export default function Home() {
+	/*
+	No loader till deployment. It wastes time and annoys me
+	
 	const [loading, setLoading] = useState(true)
 
 	useEffect(() => {
@@ -14,7 +17,7 @@ export default function Home() {
 	if (loading) {
 		return <Loader />
 	}
-
+	*/
 	return (
 		<section id="home" className="home-hero">
 			<div className="page-head flex  font-[Poppins]">
