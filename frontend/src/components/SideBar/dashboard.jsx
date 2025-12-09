@@ -1,5 +1,6 @@
 import React from "react";
 import "./Dashboard.css";
+import TodoList from "../Todo/TodoList";
 
 /* ---------- demo data (replace with real API data later) ---------- */
 const notifications = [
@@ -100,6 +101,9 @@ const Dashboard = () => {
 
         <div className="create-box">
           <button className="create-btn">Create a task</button>
+          <div className="create-todo-wrapper">
+            <TodoList />
+          </div>
         </div>
       </section>
     </div>

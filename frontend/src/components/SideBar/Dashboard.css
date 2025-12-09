@@ -198,12 +198,18 @@
 }
 
 .create-box {
-  background: #ffffff;
+  background: #e5e7eb; /* soft grey background */
   border-radius: 18px;
   padding: 40px 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row; /* place button and todo side-by-side */
+  justify-content: flex-start;
+  align-items: center; /* vertically center items */
+  gap: 96px; /* increased space between button and todo */
+}
+
+.create-todo-wrapper {
+  margin-left: 48px; /* extra breathing room */
 }
 
 .create-btn {
@@ -225,5 +231,22 @@
 
   .tasks-main {
     grid-template-columns: 1fr;
+  }
+}
+
+/* Small screens: stack create area vertically so layout remains usable */
+@media (max-width: 640px) {
+  .create-box {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .create-todo-wrapper {
+    margin-left: 0;
+    width: 100%;
+  }
+  .create-btn{
+    padding: 12px 28px;
+    font-size: 18px;
   }
 }
