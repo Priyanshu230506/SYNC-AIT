@@ -7,20 +7,7 @@ import Synclogo from "../../assets/synclogo.svg"
 import SyncAIT from "../../assets/syncaithome.svg"
 
 export default function Home() {
-	/*
-	No loader till deployment. It wastes time and annoys me
 	
-	const [loading, setLoading] = useState(true)
-
-	useEffect(() => {
-		const timer = setTimeout(() => setLoading(false), 2000)
-		return () => clearTimeout(timer)
-	}, [])
-
-	if (loading) {
-		return <Loader />
-	}
-	*/
 	const navigate = useNavigate()
 	return (
 

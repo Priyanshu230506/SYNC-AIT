@@ -175,6 +175,7 @@
   transition: right 0.3s cubic-bezier(.4,0,.2,1);
   display: flex;
   flex-direction: column;
+  pointer-events: auto;
 }
 .sidebar-close {
   position: absolute;
@@ -209,11 +210,18 @@
   width: 100vw;
   height: 100vh;
   background: rgba(30,58,138,0.12);
-  z-index: 9999;
+  z-index: 199;
+  pointer-events: none;
+}
+.sidebar.open .sidebar-overlay {
+  pointer-events: auto;
 }
 .sidebar-nav {
   margin-top: 48px;
   padding: 24px 0 0 32px;
+  z-index: 201;
+  position: relative;
+  pointer-events: auto;
 }
 .sidebar-nav ul {
   list-style: none;
