@@ -4,6 +4,7 @@ import Footer from "./sections/Footer/Footer";
 import Loader from "./components/Loader/Loader";
 import { useRoutes } from "react-router-dom";
 import { publicRoutes } from "./Routes/PublicRoutes.jsx";
+import TaskTable from "./components/TaskTable";
 import { protectedRoutes } from "./Routes/ProtectedRoutes.jsx";
 
 export default function App() {
@@ -29,6 +30,18 @@ export default function App() {
         <main className="main">{routing}</main>
       </div>
       <Footer />
+    </div>
+  );
+}
+
+export default function App() {
+  return (
+    <div className="outer-container">
+      <h2 className="title">Task Management</h2>
+      <hr />
+      <div className="card">
+        <TaskTable />
+      </div>
     </div>
   );
 }
