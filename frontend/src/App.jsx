@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { useRoutes } from "react-router-dom";
+
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./sections/Footer/Footer";
 import Loader from "./components/Loader/Loader";
-import { useRoutes } from "react-router-dom";
-import { publicRoutes } from "./Routes/PublicRoutes.jsx";
 import TaskTable from "./components/TaskTable";
+
+import { publicRoutes } from "./Routes/PublicRoutes.jsx";
 import { protectedRoutes } from "./Routes/ProtectedRoutes.jsx";
 
 export default function App() {
@@ -26,22 +28,23 @@ export default function App() {
   return (
     <div className="app">
       <Navbar />
-      <div className="site-container">
-        <main className="main">{routing}</main>
-      </div>
-      <Footer />
-    </div>
-  );
-}
 
-export default function App() {
-  return (
-    <div className="outer-container">
-      <h2 className="title">Task Management</h2>
-      <hr />
-      <div className="card">
-        <TaskTable />
+      <div className="site-container">
+        <main className="main">
+          {routing}
+
+          {/* Task Table Section */}
+          <div className="outer-container">
+            <h2 className="title">Task Management</h2>
+            <hr />
+            <div className="card">
+              <TaskTable />
+            </div>
+          </div>
+        </main>
       </div>
+
+      <Footer />
     </div>
   );
 }
